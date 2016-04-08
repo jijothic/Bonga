@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.6'
+gem 'pg'
 gem 'sqlite3'
 gem 'devise', '~> 3.5'
 gem 'sass-rails', '~> 5.0'
