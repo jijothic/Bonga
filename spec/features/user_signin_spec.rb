@@ -1,9 +1,10 @@
 require "rails_helper"
+require 'devise'
 
 RSpec.describe "User signing in" do
 
 	background do
-		@user = User.create!(email: "example@gmail.com", password: "password", password_confirmation: "password")
+			@user = User.create!(email: "example@gmail.com", password: "password", password_confirmation: "password")
 	end
 
 	scenario "successfully" do
@@ -19,6 +20,6 @@ RSpec.describe "User signing in" do
 		click_on "Log in"
 
 		expect(page).not_to have_content @user.email
-		
+
 	end
 end
