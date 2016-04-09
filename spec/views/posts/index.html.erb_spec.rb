@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+#index for the rails helper
 RSpec.describe "posts/index", type: :view do
   before(:each) do
     assign(:posts, [

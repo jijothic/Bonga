@@ -7,6 +7,9 @@ RSpec.describe "User signing in" do
 			@user = User.create!(email: "example@gmail.com", password: "password", password_confirmation: "password")
 	end
 
+	#added scenario
+	
+
 	scenario "successfully" do
 		sign_in @user
 

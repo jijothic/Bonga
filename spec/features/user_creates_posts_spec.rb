@@ -1,5 +1,7 @@
 require "rails_helper"
 
+#rails helper for Post Creation
+
 RSpec.describe "Creating post"  do
 	let(:user) { User.create(username: "exampleuser", email: "example@user.com", password: 'password',
 		password_confirmation: 'password')}

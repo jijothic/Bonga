@@ -1,5 +1,6 @@
 require "rails_helper"
 
+#Spec routings
 RSpec.describe PostsController, type: :routing do
   describe "routing" do
 

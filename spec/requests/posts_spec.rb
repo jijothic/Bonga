@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+#No one writes some real specs
+
 RSpec.describe "Posts", type: :request do
   describe "GET /posts" do
     it "works! (now write some real specs)" do

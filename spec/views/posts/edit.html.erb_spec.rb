@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+#rails helper for editing posts
 RSpec.describe "posts/edit", type: :view do
   before(:each) do
     @post = assign(:post, Post.create!(
