@@ -1,16 +1,18 @@
-require 'rails_helper'
+require "rails_helper"
 
-# Specs in this file have access to a helper object that includes
-# the PostsHelper. For example:
-#
-# describe PostsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-#Note
-RSpec.describe PostsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe PostsHelper do
+
+  describe "#post_length_in_minutes" do
+    it "calculates the time to read an article" do
+      five_hundred_words = "word " * 500
+      actual = helper.post_length_in_minutes(five_hundred_words)
+      expect(actual).to eq("2 min read")
+    end
+
+    it "can handle really short post" do
+      less_than_one_hundred = "word " * 90
+      actual = helper.post_length_in_minutes(less_than_one_hundred)
+      expect(actual).to eq("less than a minute read")
+    end
+  end
 end

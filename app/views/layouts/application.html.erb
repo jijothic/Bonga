@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="Stories">
 <head>
-  <title>Myapp</title>
+  <title>Stories</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
-<head>
-	<%= link_to "Write a story", new_post_path %>
-	<% if user_signed_in? %>
-		<%= current_user.email %>
-	<% end %>
-</head>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
-<%= yield %>
+  <%= favicon_link_tag 'favicon.png', type: 'image/png' %>
+  <%= favicon_link_tag 'stories-icon-apple-touch-180x180.png', rel: 'apple-touch-icon', type: 'image/png' %>
+
+</head>
+<body class="<%= controller.controller_name %> <%= controller.action_name %>">
+  <%= render 'layouts/overlay' unless user_signed_in? %>
+
+  <% if admin_signed_in? %>
+    <%= render 'layouts/admin_header' %>
+  <% else %>
+    <%= render 'layouts/header' %>
+  <% end %>
+  <%= render 'layouts/alert_messages' %>
+
+  <div class="container-fluid main-container">
+    <%= yield %>
+    <%= yield :sidebar %>
+  </div>
 
 </body>
+<script type="text/javascript">
+  window.userSignedIn = <%= user_signed_in? %>;
+</script>
 </html>
