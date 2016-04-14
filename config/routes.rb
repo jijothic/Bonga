@@ -1,65 +1,56 @@
-require 'sidekiq/web'
-
 Rails.application.routes.draw do
-  root "dashboards#show"
-  devise_for :admins, controllers: { sessions: 'admin/sessions' }
-  devise_for :users, controllers: { sessions: 'users/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
 
-  resources :users, only: [:show, :edit, :update] do
-    resources :recommended_posts, only: [:index]
-  end
+  # You can have the root of your site routed with "root"
+  # root 'welcome#index'
 
-  resources :posts, except: [:index] do
-    resources :responses, only: [:create]
-  end
+  # Example of regular route:
+  #   get 'products/:id' => 'catalog#view'
 
-  resources :tags, only: [:show]
+  # Example of named route that can be invoked with purchase_url(id: product.id)
+  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  get "me/bookmarks" => "dashboards#bookmarks", as: :dashboard_bookmarks
-  get "top-stories" => "dashboards#top_stories", as: :top_stories
-  get "me/stories/drafts" => "stories#drafts", as: :stories_drafts
-  get "me/stories/public" => "stories#published", as: :stories_published
-  get "search" => "search#show", as: :search
-  
-  namespace :admin do
-    resource :dashboard, only: [:show]
-    resources :featured_tags, only: [:create, :destroy]
-    resources :featured_posts, only: [:create, :destroy]
-  end
+  # Example resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
 
-  namespace :api do
-    resources :notifications, only: [:index] do
-      post :mark_as_touched, on: :collection
-      post :mark_as_read, on: :member
-    end
+  # Example resource route with options:
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
 
-    get "autocomplete" => "search_autocomplete#index"
+  # Example resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
 
-    resources :posts, only: [:create, :update, :destroy]
-    resources :users, only: [:show]
-    resources :likers, only: [:index]
-    resources :tag_followers, only: [:index]
-    resources :followers, only: [:index]
-    resources :following, only: [:index]
-    resources :following_tags, only: [:index]
+  # Example resource route with more complex sub-resources:
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', on: :collection
+  #     end
+  #   end
 
-    resources :posts, only: [] do
-      resource :likes, only: [:create, :destroy], module: :posts
-      resource :bookmarks, only: [:create, :destroy], module: :posts
-    end
+  # Example resource route with concerns:
+  #   concern :toggleable do
+  #     post 'toggle'
+  #   end
+  #   resources :posts, concerns: :toggleable
+  #   resources :photos, concerns: :toggleable
 
-    resources :responses, only: [] do
-      resource :likes, only: [:create, :destroy], module: :responses
-      resource :bookmarks, only: [:create, :destroy], module: :responses
-    end
-
-    post    "relationships" => "relationships#create"
-    delete  "relationships" => "relationships#destroy"
-    post    "interests" => "interests#create"
-    delete  "interests" => "interests#destroy"
-  end
-
-  authenticate :admin do
-    mount Sidekiq::Web => '/sidekiq' 
-  end
+  # Example resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
 end

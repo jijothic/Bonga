@@ -1,32 +1,14 @@
 <!DOCTYPE html>
-<html ng-app="Stories">
+<html>
 <head>
-  <title>Stories</title>
+  <title>Bonga</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
-  <%= favicon_link_tag 'favicon.png', type: 'image/png' %>
-  <%= favicon_link_tag 'stories-icon-apple-touch-180x180.png', rel: 'apple-touch-icon', type: 'image/png' %>
-
 </head>
-<body class="<%= controller.controller_name %> <%= controller.action_name %>">
-  <%= render 'layouts/overlay' unless user_signed_in? %>
+<body>
 
-  <% if admin_signed_in? %>
-    <%= render 'layouts/admin_header' %>
-  <% else %>
-    <%= render 'layouts/header' %>
-  <% end %>
-  <%= render 'layouts/alert_messages' %>
-
-  <div class="container-fluid main-container">
-    <%= yield %>
-    <%= yield :sidebar %>
-  </div>
+<%= yield %>
 
 </body>
-<script type="text/javascript">
-  window.userSignedIn = <%= user_signed_in? %>;
-</script>
 </html>
