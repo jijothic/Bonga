@@ -11,7 +11,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-
+gem 'bootstrap-sass', '~> 3.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
@@ -35,6 +35,6 @@ group :test do
 	gem 'database_cleaner', '~> 1.5'
 	gem 'factory_girl_rails', '~> 4.7'
 	gem 'faker', '~> 1.6'
-	gem 'launchy', '~> 2.4'
+	gem 'launchy', '~> 2.4' 
 end
 
