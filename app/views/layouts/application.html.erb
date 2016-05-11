@@ -7,13 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<head>
-		<%= link_to "Write a story", new_post_path %>
-		<% if user_signed_in? %>
-		<%= current_user.email %>
-		<% end %>
-	</head>
-
+	<%= render "layouts/header" %>
+	
+	
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
