@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Myapp</title>
+  <title>Bonga</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<head>
-	<%= link_to "Write a story", new_post_path %>
-	<% if user_signed_in? %>
+	<head>
+		<%= link_to "Write a story", new_post_path %>
+		<% if user_signed_in? %>
 		<%= current_user.email %>
-	<% end %>
-</head>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+		<% end %>
+	</head>
+
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
 <%= yield %>
 

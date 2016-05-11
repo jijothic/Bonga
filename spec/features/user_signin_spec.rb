@@ -1,24 +1,24 @@
 require "rails_helper"
 
-RSpec.describe "User signing in" do
+RSpec.feature "User signing in" do
 
 	background do
-		@user = User.create!(email: "example@gmail.com", password: "password", password_confirmation: "password")
+		@user = create(:user)
 	end
 
-	scenario "successfully" do
+	scenario 'successfully' do
 		sign_in @user
 
-		expect(page).to have_content @user.email
+		expect(page).to have_content @user.email  
+	  
 	end
 
-	scenario "unsuccessfully" do
-		visit new_user_session_path
+	scenario 'unsuccessfully' do
+	  	visit new_user_session_path
 		fill_in "Email", with: "wrongemail"
-		fill_in "password", with:"wrongpassword"
+		fill_in "Password", with: "wrongpassword"
 		click_on "Log in"
 
-		expect(page).not_to have_content @user.email
-		
+		expect(page).not_to  have_content @user.email
 	end
 end
