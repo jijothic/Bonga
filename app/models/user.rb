@@ -5,5 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy 
 
-  validates :username, :presence: true     
+  validates :username, presence: true 
+
+  mount_uploader :avatar, AvatarUploader 
+
 end
