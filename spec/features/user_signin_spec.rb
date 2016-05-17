@@ -1,4 +1,5 @@
 require "rails_helper"
+require 'capybara/rails'
 
 RSpec.feature "User signing in" do
 
@@ -8,9 +9,7 @@ RSpec.feature "User signing in" do
 
 	scenario 'successfully' do
 		sign_in @user
-
-		expect(page).to have_content @user.email  
-	  
+		expect(page).to have_content @user.email
 	end
 
 	scenario 'unsuccessfully' do

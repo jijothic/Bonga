@@ -1,4 +1,5 @@
 require "rails_helper"
+require 'capybara/rails'
 
 RSpec.describe 'User sign up' do
   scenario "successfully" do
@@ -16,7 +17,7 @@ RSpec.describe 'User sign up' do
     fill_in "Password confirmation", with: ""
     click_on "Sign up"
 
-    expect(page).to have_content "error"  
+    expect(page).to have_content "error"
 
   end
 end

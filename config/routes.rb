@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :posts, only: [:new, :create]
   resources :relationships, only: [:create, :destroy]
+
+  #No route matches [DELETE] "/relationships" fuck you haha
+  delete  "relationships" => "relationships#destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
