@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   has_many :followings, through: :active_relationships, source: :followed
   # # add this
-  #
+
   # def avatar?
   #   #code
   # end
