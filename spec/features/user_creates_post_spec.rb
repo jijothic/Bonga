@@ -1,8 +1,9 @@
+# user create post spec
 require 'rails_helper'
 
 RSpec.describe 'Creating post' do
   let(:user) { create(:user) }
-
+  
   scenario 'successfully' do
     sign_in user
     visit root_path

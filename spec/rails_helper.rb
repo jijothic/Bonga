@@ -2,7 +2,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -27,15 +27,12 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
- 
-
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
 
   config.include FactoryGirl::Syntax::Methods
-
 
   config.before(:suite) do
     if config.use_transactional_fixtures?
@@ -51,23 +48,23 @@ RSpec.configure do |config|
       MSG
     end
     DatabaseCleaner.clean_with(:truncation)
-  end  
+  end
 
   config.before(:each) do
     DatabaseCleaner.strategy = :transaction
   end
 
   config.before(:each, type: :feature) do
-    # :rack_test driver's Rack app under test shares database connection
-    # with the specs, so continue to use transaction strategy for speed.
-    driver_shares_db_connection_with_specs = Capybara.current_driver == :rack_test
+        # :rack_test driver's Rack app under test shares database connection
+        # with the specs, so continue to use transaction strategy for speed.
+        driver_shares_db_connection_with_specs = Capybara.current_driver == :rack_test
 
-    if !driver_shares_db_connection_with_specs
-      # Driver is probably for an external browser with an app
-      # under test that does *not* share a database connection with the
-      # specs, so use truncation strategy.
-      DatabaseCleaner.strategy = :truncation
-    end
+        unless driver_shares_db_connection_with_specs
+          # Driver is probably for an external browser with an app
+          # under test that does *not* share a database connection with the
+          # specs, so use truncation strategy.
+          DatabaseCleaner.strategy = :truncation
+        end
   end
 
   config.before(:each) do
@@ -78,7 +75,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-config.include Features, type: :feature
+  config.include Features, type: :feature
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
@@ -86,7 +83,6 @@ config.include Features, type: :feature
   #
   # You can disable this behaviour by removing the line below, and instead
   # explicitly tag your specs with their type, e.g.:
-  #
   #     RSpec.describe UsersController, :type => :controller do
   #       # ...
   #     end
