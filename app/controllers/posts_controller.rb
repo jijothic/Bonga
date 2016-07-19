@@ -19,4 +19,8 @@ class PostsController < ApplicationController
   def post_params
       params.require(:post).permit(:title, :body, :all_tags)
     end
+
+    def post_params_residu
+      
+    end
 end
