@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
@@ -38,6 +37,5 @@ group :test do
 	gem 'database_cleaner', '~> 1.5'
 	gem 'factory_girl_rails', '~> 4.7'
 	gem 'faker', '~> 1.6'
-	gem 'launchy', '~> 2.4' 
+	gem 'launchy', '~> 2.4'
 end
-
