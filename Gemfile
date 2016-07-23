@@ -78,7 +78,7 @@ group :development do
   gem 'pry-rails', '~> 0.3.4'
 end
 
-#Gem lock
+
 group :test do
   gem 'database_cleaner', '~> 1.5.1'
   gem 'capybara', '~> 2.5.0'
