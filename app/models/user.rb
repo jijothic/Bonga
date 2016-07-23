@@ -20,9 +20,6 @@ class User < ActiveRecord::Base
 
   has_many :followings, through: :active_relationships, source: :followed
 
-  # # add this
-
-
   # validate :avatar_image_size
   #
   # mount_uploader :avatar, AvatarUploader
