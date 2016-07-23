@@ -22,9 +22,7 @@ class User < ActiveRecord::Base
 
   # # add this
 
-  # def avatar?
-  #   #code
-  # end
+
   # validate :avatar_image_size
   #
   # mount_uploader :avatar, AvatarUploader
