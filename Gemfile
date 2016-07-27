@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.3.0"
+ruby "2.3.1"
 
 gem 'rails', '4.2.6'
 gem 'puma', '~> 2.15'
@@ -63,7 +63,7 @@ group :development, :test do
   gem 'awesome_print', '~> 1.6'
   gem 'bundler-audit', '~> 0.5.0'
 end
-
+ #Use capistrano for deployment
 group :development do
   gem 'rails_best_practices', '~> 1.15'
   # Access an IRB console on exception pages or by using <%= console %> in views
