@@ -1,6 +1,6 @@
 <h1>Profile for
 	<%= @user.username %></h1>
-
+<!-- show posts -->
 <%= avatar_for(@user) %>
 <%= @user.description %>
 <% if user_signed_in? && current_user?(@user) %>
