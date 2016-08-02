@@ -31,6 +31,7 @@ RSpec.describe 'Creating post' do
     expect(page).to have_css '.error'
   end
 
+#for non logged in  users
   scenario 'non-logged in user cannot create post' do
     visit root_path
     click_on 'Write a story'
