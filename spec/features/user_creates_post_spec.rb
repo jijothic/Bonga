@@ -12,7 +12,7 @@ RSpec.describe 'Creating post' do
     fill_in 'Title', with: 'My first post'
     fill_in 'Body', with: 'Some awesome content'
     click_on 'Publish'
-    
+
     within('.posts') do
       expect(page).to have_content('My first post')
       expect(page).to have_content user.username

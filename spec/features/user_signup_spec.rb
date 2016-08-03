@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'capybara/rails'
-
+# User signed up RSpec
 RSpec.describe 'User sign up' do
   scenario 'successfully' do
     visit new_user_registration_path
