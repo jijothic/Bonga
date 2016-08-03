@@ -4,7 +4,7 @@ RSpec.feature 'User signing in' do
   background do
     @user = create(:user)
   end
-
+# successfully login
   scenario 'successfully' do
     sign_in @user
     expect(page).to have_content @user.email
