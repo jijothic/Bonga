@@ -27,6 +27,7 @@ RSpec.describe 'Creating post' do
     fill_in 'Title', with: 'My second post'
     fill_in 'Body', with: ''
     click_on 'Publish'
+    #expect page to have errors 
 
     expect(page).to have_css '.error'
   end
