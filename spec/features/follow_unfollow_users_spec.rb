@@ -10,7 +10,7 @@ RSpec.feature 'Following / Unfollowing users' do
     click_on 'Follow'
     expect(page).not_to have_button('Follow')
     expect(page).to have_button('Unfollow')
-
+# follow user
     click_on 'Unfollow'
     expect(page).not_to have_button('Unfollow')
     expect(page).to have_button('Follow')
