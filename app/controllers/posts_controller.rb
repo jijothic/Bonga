@@ -1,3 +1,4 @@
+# Posts Controller 
 class PostsController < ApplicationController
   before_action :authenticate_user!
 
@@ -21,6 +22,6 @@ class PostsController < ApplicationController
     end
 
     def post_params_residu
-      
+
     end
 end
