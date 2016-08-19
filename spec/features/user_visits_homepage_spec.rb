@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# User visits homepage
 RSpec.feature 'User visits homepage' do
    scenario 'successully and sees a logo' do
       visit root_path
