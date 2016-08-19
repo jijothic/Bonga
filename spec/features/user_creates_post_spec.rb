@@ -4,6 +4,8 @@ require 'rails_helper'
 RSpec.describe 'Creating post' do
   let(:user) { create(:user) }
 
+  # When user successfully logged in
+
   scenario 'successfully' do
     sign_in user
     visit root_path
@@ -27,7 +29,7 @@ RSpec.describe 'Creating post' do
     fill_in 'Title', with: 'My second post'
     fill_in 'Body', with: ''
     click_on 'Publish'
-    #expect page to have errors 
+    #expect page to have errors
 
     expect(page).to have_css '.error'
   end
