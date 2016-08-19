@@ -21,6 +21,7 @@ RSpec.describe 'Creating post' do
     end
   end
 
+ # User cannot post when not login
   scenario 'unsuccessfully' do
     sign_in user
     visit root_path
