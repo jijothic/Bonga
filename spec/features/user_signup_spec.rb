@@ -10,6 +10,7 @@ RSpec.describe 'User sign up' do
     fill_in 'Password confirmation', with: 'password'
   end
 
+# scenario when user unsuccessfully logged in
   scenario 'unsuccessfully' do
     visit new_user_registration_path
     fill_in 'Email', with: 'example@gmail.com'
