@@ -1,5 +1,5 @@
 # encoding: utf-8
-# Avatar Uploader
+# Avatar Uploader loader
 
 class AvatarUploader < CarrierWave::Uploader::Base
 
