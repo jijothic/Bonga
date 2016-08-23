@@ -54,7 +54,7 @@ gem 'dalli', '~> 2.7'
 
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
 
 group :development, :test do
   gem 'byebug'
