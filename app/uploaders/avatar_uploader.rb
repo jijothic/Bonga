@@ -32,6 +32,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # process :scale => [200, 300]
 
   process resize_to_limit: [200, 200]
+  # image loader
   #
   # def scale(width, height)
   #   # do something
