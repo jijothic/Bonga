@@ -20,17 +20,7 @@ class User < ActiveRecord::Base
 
   has_many :followings, through: :active_relationships, source: :followed
 
-  # validate :avatar_image_size
-  #
-  # mount_uploader :avatar, AvatarUploader
-  #
-  # # Validates the size on an uploaded image.
-  # def avatar_image_size
-  #   errors.add(:avatar, 'should be less than 5MB')
-  #   if avatar.size > 5.megabytes
-  #     errors.add(:avatar, "should be less than 5MB")
-  #   end
-  # end
+
 
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
