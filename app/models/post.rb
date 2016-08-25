@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   validates :title, :body, presence: true
-
+# Post Controller
   belongs_to :user
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
