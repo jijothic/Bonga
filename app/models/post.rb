@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
       Tag.where(name: name).first_or_create!
     end
   end
-
+# Posts tags
   def all_tags
     tags.map(&:name).join(', ')
   end
