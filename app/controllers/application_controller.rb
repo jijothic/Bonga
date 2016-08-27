@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     current_user.id == user.id
   end
   helper_method :current_user?
-
+# ApplicationController
   protected
 
   def configure_permitted_parameters
