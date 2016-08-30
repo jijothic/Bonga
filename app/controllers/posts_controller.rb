@@ -1,11 +1,11 @@
-# Posts Controller 
+# Posts Controller
 class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def new
     @post = Post.new
   end
-
+# create new post
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
