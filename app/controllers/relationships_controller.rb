@@ -14,7 +14,7 @@ class RelationshipsController < ApplicationController
   end
 
   private
-
+# post RelationshipsController
   def set_user
     @user = User.find(params[:user_id])
   end
