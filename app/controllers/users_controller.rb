@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 # User Controller
   def delete
   end
-
+# Update UsersController
   def update
     if @user.update(user_params)
       redirect_to @user
