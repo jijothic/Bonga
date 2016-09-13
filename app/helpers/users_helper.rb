@@ -5,6 +5,7 @@ module UsersHelper
     style = options[:style]
     if user.avatar?
     if size <= 80
+      
       image_tag user.avatar.url(:thumb), width: size,
                                          height: size,
                                          alt: user.username,
