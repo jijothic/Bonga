@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 ruby "2.3.1"
-#rails version
+
 gem 'rails', '4.2.6'
 gem 'puma', '~> 2.15'
 gem 'pg'
 
-# Oauthorization
+# Auth
 gem 'devise', '~> 3.5.3'
 gem 'omniauth-facebook', '~> 3.0'
 gem 'omniauth-twitter', '~> 1.2'
@@ -45,7 +45,7 @@ gem 'elasticsearch-rails', '~> 0.1.8'
 gem 'sidekiq', '~> 4.0'
 gem 'sinatra', require: false
 gem 'slim'
-gem 'sidetiq', '~> 0.7.0'
+# gem 'sidetiq', '~> 0.7.0'
 
 gem 'nokogiri', '~> 1.6'
 
@@ -54,16 +54,16 @@ gem 'dalli', '~> 2.7'
 
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   gem 'byebug'
-  gem 'rspec-rails', '~> 3.5.1'
+  gem 'rspec-rails', '~> 3.4.0'
   gem 'poltergeist', '~> 1.8'
   gem 'awesome_print', '~> 1.6'
   gem 'bundler-audit', '~> 0.5.0'
 end
- #Use capistrano for deployment
+
 group :development do
   gem 'rails_best_practices', '~> 1.15'
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -78,7 +78,6 @@ group :development do
   gem 'pry-rails', '~> 0.3.4'
 end
 
-#for testing with Rspec
 group :test do
   gem 'database_cleaner', '~> 1.5.1'
   gem 'capybara', '~> 2.5.0'

@@ -25,9 +25,6 @@ class User < ActiveRecord::Base
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
   end
-TODO remove later one
-  def full
-  end
 
 #unfollow User
   def unfollow(other_user)
