@@ -49,7 +49,7 @@ gem 'slim'
 
 gem 'nokogiri', '~> 1.6'
 
-# Caching
+# Caching dalli
 gem 'dalli', '~> 2.7'
 
 
