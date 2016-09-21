@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby "2.3.1"
-#Database
+#Database using postgres
+
 gem 'rails', '4.2.6'
 gem 'puma', '~> 2.15'
 gem 'pg'
