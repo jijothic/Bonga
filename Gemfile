@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby "2.3.1"
+
 #Database using postgres
 
 gem 'rails', '4.2.6'
@@ -28,7 +29,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'friendly_id', '~> 5.1'
 
-# Image upload
+# Image upload Carrierwave
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
 gem 'fog',  '1.23.0'
