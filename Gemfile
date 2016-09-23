@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 ruby "2.3.1"
 
-#Database using postgres
-
 gem 'rails', '4.2.6'
 gem 'puma', '~> 2.15'
 gem 'pg'
@@ -29,7 +27,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'friendly_id', '~> 5.1'
 
-# Image upload Carrierwave
+# Image upload
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
 gem 'fog',  '1.23.0'
@@ -51,7 +49,7 @@ gem 'slim'
 
 gem 'nokogiri', '~> 1.6'
 
-# Caching dalli
+# Caching
 gem 'dalli', '~> 2.7'
 
 
