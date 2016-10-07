@@ -1,6 +1,6 @@
 # encoding: utf-8
 # Avatar Uploader loader
-
+#image loader
 class AvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
