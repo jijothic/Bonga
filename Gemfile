@@ -5,7 +5,7 @@ gem 'rails', '4.2.6'
 gem 'puma', '~> 2.15'
 gem 'pg'
 
-# Authorization
+# Auth
 gem 'devise', '~> 3.5.3'
 gem 'omniauth-facebook', '~> 3.0'
 gem 'omniauth-twitter', '~> 1.2'
@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'friendly_id', '~> 5.1'
 
-# Image uploader
+# Image upload
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
 gem 'fog',  '1.23.0'
