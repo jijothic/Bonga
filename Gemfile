@@ -77,7 +77,7 @@ group :development do
   gem 'quiet_assets', '~> 1.1'
   gem 'pry-rails', '~> 0.3.4'
 end
-
+#testing
 group :test do
   gem 'database_cleaner', '~> 1.5.1'
   gem 'capybara', '~> 2.5.0'
