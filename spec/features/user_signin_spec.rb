@@ -9,7 +9,8 @@ RSpec.feature 'User signing in' do
     sign_in @user
     expect(page).to have_content @user.email
   end
-# User unsuccessfully logged in
+
+
   scenario 'unsuccessfully' do
     visit new_user_session_path
     fill_in 'Email', with: 'wrongemail'
