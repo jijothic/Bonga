@@ -58,7 +58,7 @@ gem 'dalli', '~> 2.7'
 
 group :development, :test do
   gem 'byebug'
-  gem 'rspec-rails', '~> 3.4.0'
+  gem 'rspec-rails', '~> 3.5.0'
   gem 'poltergeist', '~> 1.8'
   gem 'awesome_print', '~> 1.6'
   gem 'bundler-audit', '~> 0.5.0'

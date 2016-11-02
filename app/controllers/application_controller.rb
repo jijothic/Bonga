@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
 # ApplicationController
   protected
 
+#when user is not logged in
+  def user_not_logged_in
+    current_user.id == user.id
+  end
+
   def configure_permitted_parameters
      devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
      devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:login, :username, :username, :email, :password, :remember_me) }
