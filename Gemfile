@@ -41,7 +41,7 @@ gem 'will_paginate', '~> 3.1'
 gem 'elasticsearch-model', '~> 0.1.8'
 gem 'elasticsearch-rails', '~> 0.1.8'
 
-# Background Job
+# Background Job handling
 gem 'sidekiq', '~> 4.0'
 gem 'sinatra', require: false
 gem 'slim'
