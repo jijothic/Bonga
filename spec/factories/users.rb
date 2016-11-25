@@ -24,6 +24,7 @@
 #  location               :string
 #
 
+#user factory
 FactoryGirl.define do
   factory :user do
     username { Faker::Internet.user_name }
