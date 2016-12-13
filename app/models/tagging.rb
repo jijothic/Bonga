@@ -1,6 +1,15 @@
+# == Schema Information
+#
+# Table name: taggings
+#
+#  id         :integer          not null, primary key
+#  post_id    :integer
+#  tag_id     :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Tagging < ActiveRecord::Base
-  #tagging must have post a user :)
   belongs_to :post
-  # Post must belong to a tag 
   belongs_to :tag
 end
