@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="Stories">
+<html>
 <head>
   <title>Stories</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -9,28 +9,17 @@
   <%= favicon_link_tag 'favicon.png', type: 'image/png' %>
   <%= favicon_link_tag 'stories-icon-apple-touch-180x180.png', rel: 'apple-touch-icon', type: 'image/png' %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body class="<%= controller.controller_name %> <%= controller.action_name %>">
-  <%= render 'layouts/overlay' unless user_signed_in? %>
-  <%= react_component('UserOverlay', {}) %>
-
+  <%= render 'layouts/editor_header' %>
+  <%= render 'layouts/alert_messages' %>
   <div data-behavior="progress-bar" class="progress-bar"></div>
 
-  <% if admin_signed_in? %>
-    <%= render 'layouts/admin_header' %>
-  <% else %>
-    <%= render 'layouts/header' %>
-  <% end %>
-  <%= render 'layouts/alert_messages' %>
-
-  <div class="container-fluid main-container">
+  <div class="container-fluid">
     <%= yield %>
     <%= yield :sidebar %>
-  </div>
+  </div> 
 
 </body>
-<script type="text/javascript">
-  window.userSignedIn = <%= user_signed_in? %>;
-</script>
 </html>
+
