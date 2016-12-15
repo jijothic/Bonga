@@ -2,6 +2,7 @@ class DashboardsController < ApplicationController
   before_action :check_for_admin, only: [:show]
   before_action :authenticate_user!, only: [:bookmarks]
 
+  #Dashboard controller
   def show
     if user_signed_in?
       @dashboard = Dashboard.new(user: current_user, posts: feed)
