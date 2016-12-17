@@ -1,5 +1,6 @@
 class ElasticsearchIndexJob < ActiveJob::Base
   queue_as :elasticsearch
+#Using elasticsearch to handle jobs
 
   def perform(operation, searchable_class, searchable_id)
     if operation =~ /index|delete/
@@ -18,8 +19,8 @@ class ElasticsearchIndexJob < ActiveJob::Base
 
     def delete(searchable_class, searchable_id)
       client = searchable_class.constantize.__elasticsearch__.client
-      client.delete index: searchable_class.underscore.downcase.pluralize, 
-                    type: searchable_class.underscore.downcase, 
+      client.delete index: searchable_class.underscore.downcase.pluralize,
+                    type: searchable_class.underscore.downcase,
                     id: searchable_id
     end
 end
