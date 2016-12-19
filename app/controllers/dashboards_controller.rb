@@ -19,11 +19,11 @@ class DashboardsController < ApplicationController
     end
   end
 
-  def top_stories
+  def top_bonga
     if user_signed_in?
-      @dashboard = Dashboard.new(user: current_user, posts: top_posts, filter: :top_stories)
+      @dashboard = Dashboard.new(user: current_user, posts: top_posts, filter: :top_bonga)
     else
-      @dashboard = Dashboard.new(posts: top_posts, filter: :top_stories)
+      @dashboard = Dashboard.new(posts: top_posts, filter: :top_bonga)
     end
     respond_to do |format|
       format.html { render :show }
@@ -46,7 +46,7 @@ class DashboardsController < ApplicationController
     end
 
     def top_posts
-      Post.published.top_stories(5).includes(:user)
+      Post.published.top_bonga(5).includes(:user)
     end
 
     def recent_posts

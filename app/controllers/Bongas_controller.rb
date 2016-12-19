@@ -1,5 +1,5 @@
 #Controller
-class StoriesController < ApplicationController
+class BongaController < ApplicationController
   before_action :authenticate_user!
 
   def drafts
