@@ -20,8 +20,8 @@ class Dashboard
     Tag.all.limit(50)
   end
 
-  def top_stories
-    Post.published.top_stories(5).includes(:user)
+  def top_bonga
+    Post.published.top_bonga(5).includes(:user)
   end
 
   def new_post
@@ -32,7 +32,7 @@ class Dashboard
     filter.present?
   end
 
-  def top_stories?
-    filter == :top_stories
+  def top_bonga?
+    filter == :top_bonga
   end
 end

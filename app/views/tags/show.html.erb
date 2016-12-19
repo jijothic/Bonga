@@ -42,15 +42,15 @@
     <% end %>
 
     <% unless @dashboard.filtered? %>
-      <h4 class="small-heading border-top">Top stories</h4>
-      <div class="sidebar-top-stories">
+      <h4 class="small-heading border-top">Top bonga</h4>
+      <div class="sidebar-top-bonga">
         <ul>
-          <% @dashboard.top_stories.each_with_index do |post, index| %>
-            <li class="top-stories-list-item">
+          <% @dashboard.top_bonga.each_with_index do |post, index| %>
+            <li class="top-bonga-list-item">
               <div class="count-button-wrapper">
                 <span class="count-button"><%= index + 1 %></span>
               </div>
-              <div class="top-stories-links">
+              <div class="top-bonga-links">
                 <%= link_to post.title, post, class: 'post-title' %><br/>
                 <small>
                   <%= react_component("PopoverLink", { user_id: post.user.id, url: user_path(post.user), children: post.username }) %>

@@ -2,7 +2,7 @@
   <div class="container-fluid col-md-10 col-md-offset-1">
     <div class="navbar-header">
       <%= link_to root_path, class: "navbar-brand", id: "logo" do %>
-        <%= image_tag('stories-logo.svg', height: 40, alt: "Stories") %>
+        <%= image_tag('bonga-logo.svg', height: 40, alt: "bonga") %>
       <% end %>
     </div>
     <ul class="nav navbar-nav filter-links">
@@ -13,7 +13,7 @@
           <%= nav_link_to "Staff pick", root_path %>
         <% end %>
       </li>
-      <li><%= nav_link_to "Top stories", top_stories_path %></li>
+      <li><%= nav_link_to "Top bonga", top_bonga_path %></li>
       <% if user_signed_in? %>
         <li><%= nav_link_to "Bookmarks", dashboard_bookmarks_path %></li>
       <% else %>
