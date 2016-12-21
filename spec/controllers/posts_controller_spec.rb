@@ -1,5 +1,5 @@
 require "rails_helper"
-
+#post controller spec
 RSpec.describe PostsController do
 
   describe "Access Control" do
