@@ -1,6 +1,6 @@
 class ElasticsearchIndexJob < ActiveJob::Base
   queue_as :elasticsearch
-#Using elasticsearch to handle jobs
+#Using elasticsearch to handle jobs client
 
   def perform(operation, searchable_class, searchable_id)
     if operation =~ /index|delete/
