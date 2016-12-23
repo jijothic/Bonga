@@ -1,3 +1,4 @@
+#Feeds dashboard
 class Feed
   include ActiveModel::Model
   attr_reader :user, :page
