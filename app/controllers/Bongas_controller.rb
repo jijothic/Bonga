@@ -1,4 +1,4 @@
-#Controller
+#Controller for the posts
 class BongaController < ApplicationController
   before_action :authenticate_user!
 
