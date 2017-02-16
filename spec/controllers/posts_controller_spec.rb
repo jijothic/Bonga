@@ -103,7 +103,7 @@ RSpec.describe PostsController do
         end
 
         it "redirects to edit page" do
-          @draft = build(:draft, title: "", body: "hello world")
+          @draft = build(:draft, title: "", body: "hello world welcome")
           post :create_and_edit, post: { title: @draft.title, body: @draft.body }
           expect(response).to redirect_to(edit_post_path(assigns(:post)))
         end
