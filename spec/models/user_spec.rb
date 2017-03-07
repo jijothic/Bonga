@@ -137,6 +137,6 @@ RSpec.describe User, type: :model do
   describe "#people_to_folow" do
     let(:user) { create(:user) }
 
-    it "gets upto 25 users not including self"
+    it "gets upto 30 users not including self"
   end
 end
