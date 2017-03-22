@@ -55,7 +55,7 @@ gem 'dalli', '~> 2.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+#rspec for testing
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5.0'
