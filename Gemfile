@@ -58,6 +58,7 @@ gem 'dalli', '~> 2.7'
 #rspec for testing
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-core', '~>2.11'
   gem 'rspec-rails', '~> 3.5.0'
   gem 'poltergeist', '~> 1.8'
   gem 'awesome_print', '~> 1.6'
