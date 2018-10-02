@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.3.1"
+ruby "2.3.3"
 
 gem 'rails', '4.2.6'
 gem 'puma', '~> 2.15'
@@ -12,7 +12,7 @@ gem 'omniauth-twitter', '~> 1.2'
 gem 'omniauth-google-oauth2', '~> 0.3.1'
 
 # Front-end
-gem 'react-rails', '~> 1.6'
+gem 'react-rails', '~> 1.10'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-sass', '~> 4.5'
@@ -41,7 +41,7 @@ gem 'will_paginate', '~> 3.1'
 gem 'elasticsearch-model', '~> 0.1.8'
 gem 'elasticsearch-rails', '~> 0.1.8'
 
-# Background Job handling
+# Background Job
 gem 'sidekiq', '~> 4.0'
 gem 'sinatra', require: false
 gem 'slim'
@@ -55,14 +55,14 @@ gem 'dalli', '~> 2.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-#rspec for testing
+
 group :development, :test do
   gem 'byebug'
-  gem 'rspec-core', '~>2.11'
-  gem 'rspec-rails', '~> 3.5.0'
+  gem 'rspec-rails', '~> 3.4.0'
   gem 'poltergeist', '~> 1.8'
   gem 'awesome_print', '~> 1.6'
   gem 'bundler-audit', '~> 0.5.0'
+  gem 'pry-rails', '~> 0.3.4'
 end
 
 group :development do
@@ -76,9 +76,8 @@ group :development do
   gem 'annotate'
   gem 'bullet', '~> 5.0'
   gem 'quiet_assets', '~> 1.1'
-  gem 'pry-rails', '~> 0.3.4'
 end
-#testing
+
 group :test do
   gem 'database_cleaner', '~> 1.5.1'
   gem 'capybara', '~> 2.5.0'
