@@ -133,7 +133,7 @@ redis-server
 Browse to where you want the app to live and clone app:
 
 ```
-git clone https://github.com/jijothic/bonga.git
+git clone https://github.com/jijothic/Bonga.git
 
 Change directory into the Bonga folder
 ```
